@@ -1,0 +1,254 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #eee;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #f39c12;
+  text-shadow: 0 0 10px #f39c12;
+}
+
+section {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 2rem;
+  background-color: #1e1e1e;
+  padding: 1rem 2rem 2rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+}
+
+h2 {
+  margin-bottom: 1rem;
+  color: #f1c40f;
+  border-bottom: 2px solid #f1c40f;
+  padding-bottom: 0.5rem;
+}
+
+#movie-list,
+#seen-list,
+#recommended-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.movie {
+  display: grid;
+  background-color: #292929;
+  border-radius: 8px;
+  padding: 0.5rem;
+  width: 18%;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.7);
+  transition: transform 0.2s ease;
+}
+
+.movie:hover {
+  box-shadow: 0px 0px 10px 0px #616060;
+  transform: scale(1.05);
+}
+
+.movie img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+}
+
+.movie p {
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+  color: #ddd;
+}
+
+.movie p strong {
+  color: #f39c12;
+}
+
+.movie p em {
+  font-style: normal;
+  color: #bbb;
+  font-size: 0.8rem;
+}
+.ola {
+  padding:100rem 100rem;
+  border: none;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #f39c12;
+  color: #121212;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.ola:hover {
+  
+  background-color: #d17c09;
+}
+
+button {
+  margin-top: 0.3rem;
+  padding: 0.4rem 0.5rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #f39c12;
+  color: #121212;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+  
+}
+
+button:hover {
+  
+  background-color: #d17c09;
+}
+
+/* Botón limpiar historial */
+#clear-history {
+  margin-bottom: 1rem;
+  width: 100%;
+  font-size: 1rem;
+}
+
+/* Responsive para móviles */
+@media (max-width: 600px) {
+  .movie {
+    width: 45%;
+  }
+}
+
+.navbar {
+  width: 100%;
+  background-color: #1f1f1f50;
+  backdrop-filter: blur(15px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.nav-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f39c12;
+  user-select: none;
+  display: flex;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: #eee;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #f39c12;
+}
+
+/* Responsive móvil */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+  .nav-links li a {
+    font-size: 1.1rem;
+  }
+}
+
+.nav-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 100%;
+
+}
+
+#search-input {
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  width: 200px;
+}
+
+#search-input:focus {
+  outline: 2px solid #f39c12;
+}
+
+.nav-search button {
+  
+  background-color: #f39c12;
+  border: none;
+  color: #121212;
+  padding: 0.3rem 0.8rem;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  height: 100%;
+}
+
+.nav-search button:hover {
+  background-color: #d17c09;
+}
+
+/* Responsive: que la barra se adapte */
+@media (max-width: 600px) {
+  .nav-search {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  #search-input {
+    width: 100%;
+  }
+}
+
+#seen-list, #recommended-list {
+  max-height: 1050px; /* o la altura que consideres para 3 filas */
+  overflow-y: auto;
+  border: 1px solid #323232; /* opcional, para delimitar visualmente */
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
