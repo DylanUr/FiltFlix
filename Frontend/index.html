@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FiltFlix</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">🎬 FiltFlix</div>
+    <form id="search-form" class="nav-search">
+        <input type="search" id="search-input" placeholder="Buscar películas..." autocomplete="off" />
+        <button type="submit" class="ola">Buscar</button>
+    </form>
+    <ul class="nav-links">
+        <li><a href="#movies">Películas Populares</a></li>
+        <li><a href="#seen">Ya has visto</a></li>
+        <li><a href="#recommended">Recomendadas</a></li>
+    </ul>
+  </nav>
+
+
+  <h1>Recomendaciones Funcionales</h1>
+
+  <section id="movies">
+    <h2>Películas populares</h2>
+    <div id="movie-list"></div>
+  </section>
+
+  <section id="seen">
+    <h2>Ya has visto</h2>
+    <button id="clear-history">Limpiar historial</button>
+    <div id="seen-list"></div>
+  </section>
+
+  <section id="recommended">
+  <h2>Recomendadas para ti</h2>
+  <div id="recommended-list"></div>
+  </section>
+
+
+  <script src="../Backend/script.js"></script>
+</body>
+</html>
